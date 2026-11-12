@@ -31,6 +31,8 @@
     <ClCompile Include="src\Components\render_component.cc">
       <Filter>Components</Filter>
     </ClCompile>
+    <ClCompile Include="src\Levels\button.cc" />
+    <ClCompile Include="src\Levels\mouse_event.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Levels\Level 1.h">
@@ -51,5 +53,7 @@
     <ClInclude Include="src\Framework\event.hh">
       <Filter>Framework</Filter>
     </ClInclude>
+    <ClInclude Include="src\Levels\button.hh" />
+    <ClInclude Include="src\Levels\mouse_event.hh" />
   </ItemGroup>
 </Project>

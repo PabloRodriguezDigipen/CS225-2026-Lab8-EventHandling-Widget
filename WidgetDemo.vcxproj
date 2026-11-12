@@ -23,7 +23,9 @@
     <ClCompile Include="src\Components\render_component.cc" />
     <ClCompile Include="src\Framework\component.cc" />
     <ClCompile Include="src\Framework\entity.cc" />
+    <ClCompile Include="src\Levels\button.cc" />
     <ClCompile Include="src\Levels\Level 1.cpp" />
+    <ClCompile Include="src\Levels\mouse_event.cc" />
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -32,7 +34,9 @@
     <ClInclude Include="src\Components\render_component.hh" />
     <ClInclude Include="src\Framework\component.hh" />
     <ClInclude Include="src\Framework\entity.hh" />
+    <ClInclude Include="src\Levels\button.hh" />
     <ClInclude Include="src\Levels\Level 1.h" />
+    <ClInclude Include="src\Levels\mouse_event.hh" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

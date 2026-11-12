@@ -1,12 +1,21 @@
 #include <AEEngine.h>
 #include <imgui/imgui.h>
 #include "Level 1.h"
+#include "button.hh"
+#include "mouse_event.hh"
 int mode = 0;
 
 bool ShowFrameworkMenu();
 
+Button buton(AEVec2(0,0), AEVec2(120,30), AE_COLORS_BLUE, "blip blop");
+MouseEventManager eventManager;
+
 void Level_1_Load()
 {
+    Button* btn = &buton;
+    eventManager.AddHandler([&btn](MouseEvent* event) {
+        btn->OnMouseClick(event);
+        });
 }
 
 void Level_1_Init()
@@ -19,6 +28,13 @@ void Level_1_Update()
     // core keyboard shortcuts and GUI, do not delete this code!
     KeyboardInput();
     bool guiActive = ShowFrameworkMenu();
+
+    if (AEInputMousePressed(0)) {
+        MouseEvent event;
+        MousePositionData pos = AEGetMouseData();
+        if (AEStaticPointToStaticRect(&pos.position, &buton.position, buton.size.x, buton.size.y))
+            eventManager.Trigger(&event);
+    }
 }
 
 void Level_1_Render()
@@ -26,6 +42,8 @@ void Level_1_Render()
     // clear frame buffer, do not delete this code
     AEGfxSetClearColor(AEGfxColor(0, 0, 0));
     AEGfxClearBuffer();
+
+    buton.Draw();
 }
 
 void Level_1_Free()
